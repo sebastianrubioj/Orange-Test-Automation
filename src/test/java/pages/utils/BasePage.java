@@ -1,4 +1,4 @@
-package pages;
+package pages.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,4 +33,7 @@ public class BasePage {
         return driver.getCurrentUrl();
     }
 
+    public WebDriver getDriver() {
+        return driver;
+    }
 }

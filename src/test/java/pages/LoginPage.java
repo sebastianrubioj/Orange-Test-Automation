@@ -5,10 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import pages.utils.BasePage;
 
 import java.util.List;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
     private final String USER_NAME_INPUT = "username";
     private final String PASSWORD_INPUT =    "password";
     private final String LOGIN_BUTTON = "button[type='submit']";
