@@ -16,8 +16,8 @@ public class HomePage extends BasePage{
         super(driver);
     }
 
-    public String getUserNameDropdownText(){
+    public boolean isUserNameDropdownTextPresent(){
         getWait().until(ExpectedConditions.visibilityOf(userNameDropdown));
-        return userNameDropdown.getText();
+        return userNameDropdown.isEnabled();
     }
 }
