@@ -73,4 +73,5 @@ public class LoginStepDef extends BaseTest {
     public void shouldSeeThe(String element) {
         Assert.assertTrue(resetPage.isElementPresent(element));
     }
+
 }

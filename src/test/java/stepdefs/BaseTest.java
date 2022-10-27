@@ -1,10 +1,7 @@
 package stepdefs;
 
 import org.openqa.selenium.WebDriver;
-import pages.AdminSectionPage;
-import pages.HomePage;
-import pages.LoginPage;
-import pages.ResetPasswordPage;
+import pages.*;
 
 import static stepdefs.Hooks.getDriver;
 
@@ -20,8 +17,8 @@ public class BaseTest {
         return new HomePage(myDriver);
     }
 
-    public AdminSectionPage getAdminSectionPage(){
-        return new AdminSectionPage(myDriver);
+    public AdminManagementPage getAdminManagementPage(){
+        return new AdminManagementPage(myDriver);
     }
 
     public void goToUrl(String url){
@@ -30,6 +27,14 @@ public class BaseTest {
 
     public ResetPasswordPage getResetPasswordPage(){
         return new ResetPasswordPage(myDriver);
+    }
+
+    public AdminPage getAdminPage(){
+        return new AdminPage(myDriver);
+    }
+
+    public AdminJobPage getAdminJobPage(){
+        return new AdminJobPage(myDriver);
     }
 
 }
