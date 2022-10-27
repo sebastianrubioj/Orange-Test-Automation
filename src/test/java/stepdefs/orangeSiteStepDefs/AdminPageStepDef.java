@@ -9,6 +9,7 @@ import pages.AdminJobPage;
 import pages.AdminManagementPage;
 import pages.AdminPage;
 import pages.HomePage;
+import pages.utils.Utils;
 import stepdefs.BaseTest;
 
 public class AdminPageStepDef extends BaseTest {
@@ -117,5 +118,35 @@ public class AdminPageStepDef extends BaseTest {
     @And("should see the table tittle with the total amount of records verified previously")
     public void shouldSeeTheTableTittleWithTheTotalAmountOfRecordsVerifiedPreviously() {
         Assert.assertEquals(adminJobPage.getAmountFromRecordsTitle(),recordsAmount);
+    }
+
+    @Then("should see {string} title")
+    public void shouldSeeTitle(String title) {
+        Assert.assertEquals(adminJobPage.getHeaderTitle(),title);
+    }
+
+    @And("should see an Add button")
+    public void shouldSeeAnAddButton() {
+        Assert.assertTrue(adminJobPage.validateAddButtonPresent());
+    }
+
+    @And("should see the records tittle")
+    public void shouldSeeTheRecordsTittle() {
+        Assert.assertTrue(!adminJobPage.getRecordsTableTitle().isEmpty());
+    }
+
+    @And("should see the table with {string} section")
+    public void shouldSeeTheTableWithSection(String tableHeader) {
+        Assert.assertTrue(adminJobPage.validateColumnHeaderTitlePresent(tableHeader));
+    }
+
+    @When("selects one checkbox result")
+    public void selectsOneCheckboxResult() {
+        adminJobPage.setSelectOneCheckboxFromTable();
+    }
+
+    @Then("should appear just one checkbox selected")
+    public void shouldAppearJustOneCheckboxSelected() {
+        Assert.assertTrue(adminJobPage.validateOneCheckboxSelected());
     }
 }

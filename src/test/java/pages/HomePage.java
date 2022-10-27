@@ -5,13 +5,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.utils.BasePage;
+import pages.utils.CommonPage;
+import pages.utils.Utils;
 
-public class HomePage extends BasePage {
+public class HomePage extends CommonPage {
 
     private final String USERNAME_DROPDOWN = "oxd-userdropdown-name";
     private final String ADMIN_MENU_SECTION = "a[href='/web/index.php/admin/viewAdminModule']";
     private final String SECTION_PAGE_HEADER = "oxd-topbar-header-breadcrumb-module";
-
+    Utils util = new Utils(getDriver());
     @FindBy(className = USERNAME_DROPDOWN)
     WebElement userNameDropdown;
 
@@ -31,7 +33,7 @@ public class HomePage extends BasePage {
     }
 
     public void selectAdminSection(){
-        clickElement(adminMenuSection);
+        util.clickElement(adminMenuSection);
     }
 
     public boolean validateSectionHeader(String sectionName){

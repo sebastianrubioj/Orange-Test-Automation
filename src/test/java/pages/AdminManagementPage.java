@@ -6,11 +6,12 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.utils.BasePage;
+import pages.utils.CommonPage;
 import pages.utils.Utils;
 
 import java.util.List;
 
-public class AdminManagementPage extends Utils {
+public class AdminManagementPage extends CommonPage {
 
     private final String SYSTEM_USERS_FILTER_CONTAINER = "oxd-table-filter";
     private final String USER_ROLE_DROPDOWN = "//div/label[text()='User Role']/parent::div/following-sibling::div";
@@ -33,6 +34,7 @@ public class AdminManagementPage extends Utils {
     private final String TOAST_INFO_MESSAGE = "oxd-text--toast-message";
     private final String TABLE_RESULTS = "oxd-table-card";
 
+    Utils util = new Utils(getDriver());
 
     @FindBy(className = SYSTEM_USERS_FILTER_CONTAINER)
     WebElement systemUsersFilterContainer;
@@ -92,16 +94,16 @@ public class AdminManagementPage extends Utils {
     }
 
     public void selectUserRole(String userRole) {
-        clickElement(userRoleDropdown);
+        util.clickElement(userRoleDropdown);
         if (userRole.equals("Admin")) {
-            clickElement(userRoleAdmin);
+            util.clickElement(userRoleAdmin);
         } else {
-            clickElement(userRoleESS);
+            util.clickElement(userRoleESS);
         }
     }
 
     public void clickOnSearch() {
-        clickElement(searchButton);
+        util.clickElement(searchButton);
     }
 
     public boolean tableContainsExpectedUserRole(String expectedUserRole) {
@@ -109,11 +111,11 @@ public class AdminManagementPage extends Utils {
     }
 
     public void selectStatus(String status) {
-        clickElement(statusTypeDropdown);
+        util.clickElement(statusTypeDropdown);
         if (status.equals("Enabled")) {
-            clickElement(statusTypeEnabled);
+            util.clickElement(statusTypeEnabled);
         } else {
-            clickElement(statusTypeDisabled);
+            util.clickElement(statusTypeDisabled);
         }
     }
 

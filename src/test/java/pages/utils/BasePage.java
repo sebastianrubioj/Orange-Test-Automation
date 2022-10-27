@@ -24,10 +24,6 @@ public class BasePage {
         return this.wait;
     }
 
-    public void clickElement(WebElement element){
-        wait.until(ExpectedConditions.elementToBeClickable(element));
-        element.click();
-    }
 
     public String getUrl(){
         return driver.getCurrentUrl();

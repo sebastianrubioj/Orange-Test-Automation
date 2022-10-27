@@ -85,7 +85,7 @@ Feature: Admin page tests
     And user provide valid credentials
     And clicks on login button
     And lands in admin section
-    When type the system user name "<username>"
+    When type the system user name "fake username"
     And clicks on search button
     Then should see the notification info with message "No Records Found"
     And should not see any result in the records table
@@ -101,13 +101,13 @@ Feature: Admin page tests
     Then should see the notification info with message "No Records Found"
     And should not see any result in the records table
 
-  Scenario: [Job Titles] Validate job titles select all
+  Scenario: [Job Titles] Validate job titles section
     Given user is on login page
     And user provide valid credentials
     And clicks on login button
     And lands in admin section
     When goes to Job Titles section
-    Then should see "Jobs Titles" title
+    Then should see "Job Titles" title
     And should see an Add button
     And should see the records tittle
     And should see the table with "Job Titles" section
