@@ -57,6 +57,7 @@ public class LoginPage extends CommonPage {
     }
 
     public String getInvalidCredentialsMessage(){
+        getWait().until(ExpectedConditions.visibilityOf(invalidCredentialsMessage));
         return invalidCredentialsMessage.getText();
     }
 
