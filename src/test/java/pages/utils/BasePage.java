@@ -1,4 +1,4 @@
-package pages;
+package pages.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,13 +24,12 @@ public class BasePage {
         return this.wait;
     }
 
-    public void clickElement(WebElement element){
-        wait.until(ExpectedConditions.elementToBeClickable(element));
-        element.click();
-    }
 
     public String getUrl(){
         return driver.getCurrentUrl();
     }
 
+    public WebDriver getDriver() {
+        return driver;
+    }
 }

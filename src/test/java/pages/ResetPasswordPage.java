@@ -4,8 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import pages.utils.BasePage;
+import pages.utils.CommonPage;
 
-public class ResetPasswordPage extends BasePage {
+public class ResetPasswordPage extends CommonPage {
 
     private final String USERNAME_INPUT = "username";
     private final String RESET_PASSWORD_BUTTON = "orangehrm-forgot-password-button--reset";
