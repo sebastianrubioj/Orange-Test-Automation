@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.util.Random;
 
 import java.util.List;
+import java.util.Set;
 
 public class CommonPage extends BasePage {
     private final String LOADING_SPINNER = "oxd-loading-spinner";
@@ -139,5 +140,9 @@ public class CommonPage extends BasePage {
         waitForSpinnerDisapear();
         int indexElementToCheck = random.nextInt(tableCheckboxList.size());
         util.clickElement(tableCheckboxListSelection.get(indexElementToCheck));
+    }
+
+    public String getPageTitleFromNewTab(){
+        return util.changeOfTab().getTitle();
     }
 }

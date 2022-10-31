@@ -12,6 +12,7 @@ public class HomePage extends CommonPage {
 
     private final String USERNAME_DROPDOWN = "oxd-userdropdown-name";
     private final String ADMIN_MENU_SECTION = "a[href='/web/index.php/admin/viewAdminModule']";
+    private final String MAINTENANCE_MENU_SECTION = "a[href='/web/index.php/maintenance/viewMaintenanceModule'";
     private final String SECTION_PAGE_HEADER = "oxd-topbar-header-breadcrumb-module";
     Utils util = new Utils(getDriver());
     @FindBy(className = USERNAME_DROPDOWN)
@@ -19,6 +20,8 @@ public class HomePage extends CommonPage {
 
     @FindBy(css = ADMIN_MENU_SECTION)
     WebElement adminMenuSection;
+    @FindBy(css = MAINTENANCE_MENU_SECTION)
+    WebElement maintenanceMenuSection;
 
     @FindBy(className = SECTION_PAGE_HEADER)
     WebElement sectionPageHeader;
@@ -34,6 +37,10 @@ public class HomePage extends CommonPage {
 
     public void selectAdminSection(){
         util.clickElement(adminMenuSection);
+    }
+
+    public void selectMaintenanceSection(){
+        util.clickElement(maintenanceMenuSection);
     }
 
     public boolean validateSectionHeader(String sectionName){

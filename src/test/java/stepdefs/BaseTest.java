@@ -37,6 +37,7 @@ public class BaseTest {
     public AdminJobPage getAdminJobPage() {
         return new AdminJobPage(myDriver);
     }
+    public AccessAdminPage getAccessAdminPage(){return new AccessAdminPage(myDriver);}
 
     public Utils getUtils() {
         return new Utils(myDriver);
